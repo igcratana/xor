@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XOR Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>XOR Calculator</h1>
+        <label for="input1">Enter Hexadecimal Number 1:</label>
+        <input type="text" id="input1" placeholder="e.g., 2B">
+
+        <label for="input2">Enter Hexadecimal Number 2:</label>
+        <input type="text" id="input2" placeholder="e.g., 8A">
+
+        <button onclick="calculateXOR()">Calculate XOR</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateXOR() {
+            const hex1 = document.getElementById('input1').value.trim();
+            const hex2 = document.getElementById('input2').value.trim();
+
+            if (!hex1 || !hex2) {
+                document.getElementById('result').innerText = "Please enter valid hexadecimal numbers.";
+                return;
+            }
+
+            try {
+                // Convert hex to decimal, perform XOR, then convert back to hex
+                const dec1 = parseInt(hex1, 16);
+                const dec2 = parseInt(hex2, 16);
+                const xorResult = dec1 ^ dec2;
+
+                document.getElementById('result').innerText = 
+                    `Result (Hexadecimal): ${xorResult.toString(16).toUpperCase()}`;
+            } catch (e) {
+                document.getElementById('result').innerText = "Invalid input. Please enter valid hexadecimal numbers.";
+            }
+        }
+    </script>
+</body>
+</html>
