@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XOR Calculator</title>
+    <title>XOR</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,14 +36,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>XOR Calculator</h1>
+        <h1>XOR លេខ</h1>
         <label for="input1">Enter Hexadecimal Number 1:</label>
         <input type="text" id="input1" placeholder="e.g., 2B">
 
         <label for="input2">Enter Hexadecimal Number 2:</label>
         <input type="text" id="input2" placeholder="e.g., 8A">
 
-        <button onclick="calculateXOR()">Calculate XOR</button>
+        <button onclick="calculateXOR()">គិតលេខ</button>
 
         <div class="result" id="result"></div>
     </div>
@@ -67,7 +67,7 @@
                 document.getElementById('result').innerText = 
                     `Result (Hexadecimal): ${xorResult.toString(16).toUpperCase()}`;
             } catch (e) {
-                document.getElementById('result').innerText = "Invalid input. Please enter valid hexadecimal numbers.";
+                document.getElementById('result').innerText = "ដាក់តម្លៃចូលបង";
             }
         }
     </script>
